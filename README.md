@@ -30,3 +30,21 @@ Then as jenkins user run:
 ```shell
 docker-machine create --driver digitalocean --digitalocean-access-token=<DIGITALOCEANACCESSTOKEN> --digitalocean-image ubuntu-14-04-x64 --digitalocean-region ams2 TestSlave
 ```
+This command creates a new Digitalocean droplet named TestSlave. To generate a Digitalocean access token log in to Digitalocean and choose > API > Tokens > Generate New Token.
+
+Next we need to make the slave accessible for Jenkins.
+```shell
+cp ~/.docker/machine/machines/TestSlave/ /var/jenkins_home/
+ssh <DROPLET ADDRESS> -lroot -i /var/jenkins_home/TestSlave/id_rsa 
+```
+```shell
+cd /root
+wget http://<JENKINSHOSTADDRESS>/jnlpJars/slave.jar
+```
+And install Java
+```shell
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+```
+Then exit the slave.
