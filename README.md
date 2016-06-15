@@ -26,6 +26,7 @@ Use 'docker ps' to get the name or ID of jenkinsmaster and then run:
 docker exec -it jenkinsmaster /bin/bash
 ```
 
+Then as jenkins user run: 
 ```shell
 docker-machine create --driver digitalocean --digitalocean-access-token=<DIGITALOCEANACCESSTOKEN> --digitalocean-image ubuntu-14-04-x64 --digitalocean-region ams2 TestSlave
 ```
