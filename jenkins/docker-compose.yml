@@ -1,0 +1,15 @@
+jenkinsdata:
+ build: jenkins-data
+jenkinsmaster:
+ build: jenkins-master
+ volumes_from:
+  - jenkinsdata
+ ports:
+  - "40000:40000"
+  - "49001:8080"
+jenkinsnginx:
+ build: jenkins-nginx
+ ports:
+  - "80:80"
+ links:
+  - jenkinsmaster:jenkins-master
