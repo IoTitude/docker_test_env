@@ -19,4 +19,13 @@ make run
 Now you have Jenkins running in containers and accessible at http://localhost/
 
 ## Test slave
+The jenkins-master container has [Docker Machine](https://docs.docker.com/machine/overview/), which we use to create a slave docker host on Digitalocean.  
 
+Use 'docker ps' to get the name or ID of jenkinsmaster and then run:
+```shell
+docker exec -it jenkinsmaster /bin/bash
+```
+
+```shell
+docker-machine create --driver digitalocean --digitalocean-access-token=<DIGITALOCEANACCESSTOKEN> --digitalocean-image ubuntu-14-04-x64 --digitalocean-region ams2 TestSlave
+```
