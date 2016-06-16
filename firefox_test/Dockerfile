@@ -2,7 +2,7 @@ FROM iotitude/firefox_env
 
 MAINTAINER Jaakko
 
-ADD ./scripts/ /home/root/scripts
+COPY ./scripts/ /home/root/scripts
 
 RUN chmod -R 755 /home/root/scripts
 
