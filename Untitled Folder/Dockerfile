@@ -28,3 +28,11 @@ RUN dpkg --configure -a
 RUN sh -c "apt-get update;apt-get dist-upgrade;apt-get autoremove;apt-get autoclean;apt-get -f -y install"
 
 RUN pip install robotframework robotframework-extendedselenium2library
+
+ADD ./scripts/ /home/root/scripts
+
+RUN chmod -R 755 /home/root/scripts
+
+ENTRYPOINT ["/home/root/scripts/start.sh"]
+
+
