@@ -10,7 +10,8 @@ exec "$@"
 echo 'Cloning test repo...'
 git clone https://github.com/IoTitude/Tests.git  /home/root/test
 echo 'Starting robot tests...'
-robot /home/root/test/tests.txt
+testList=$(cat /home/root/test/tests.txt)
+robot $testList
 mv /log.html /home/root/volume
 mv /output.xml /home/root/volume
 mv /report.html /home/root/volume
