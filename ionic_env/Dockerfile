@@ -1,8 +1,8 @@
 FROM ubuntu:14.04
-
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN apt-get update && apt-get install -y \
 
-  curl git wget unzip
+  curl git wget unzip screen expect
 
 RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 
@@ -14,18 +14,15 @@ RUN npm install -g cordova ionic
 
 RUN mkdir -p /usr/src
 
-WORKDIR /usr/src
-
-RUN wget https://github.com/IoTitude/Instapp/archive/v0.2.zip
-
-RUN unzip v0.2.zip
-
-WORKDIR /usr/src/Instapp-0.2
-
 EXPOSE 8100
 
-CMD ["ionic", "serve", "--all", "--nobrowser", "--nolivereload", "--port=8100", "&"]
+COPY ./scripts/ /usr/src/scripts
 
+RUN chmod -R 755 /usr/src/scripts
+
+ENTRYPOINT ["/usr/src/scripts/start.sh"]
+
+# CMD ["ionic", "serve", "--all", "--nobrowser", "--nolivereload", "--port=8100", "&"]
 
 # Commands for running
 
@@ -34,5 +31,4 @@ CMD ["ionic", "serve", "--all", "--nobrowser", "--nolivereload", "--port=8100", 
 # docker run -di -p 8100:8100 --name=instapp instapp
 
 # ionic serve --all --nobrowser --nolivereload --port=8100
-
 
