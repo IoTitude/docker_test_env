@@ -11,7 +11,8 @@ echo 'Cloning test repo...'
 git clone https://github.com/IoTitude/instapp_firefox_tests.git  /home/root/test
 echo 'Starting robot tests...'
 testList=$(cat /home/root/test/tests.txt)
+cd /home/root/test
 robot $testList
-mv /log.html /home/root/volume
-mv /output.xml /home/root/volume
-mv /report.html /home/root/volume
+mv /home/root/test/log.html /home/root/volume
+mv /home/root/test/output.xml /home/root/volume
+mv /home/root/test/report.html /home/root/volume
