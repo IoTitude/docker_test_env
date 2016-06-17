@@ -8,7 +8,7 @@ export DISPLAY=:99
 2>/dev/null 1>&2 Xvfb :99 -shmem -screen 0 1366x768x16 &
 exec "$@"
 echo 'Cloning test repo...'
-git clone https://github.com/IoTitude/Tests.git  /home/root/test
+git clone https://github.com/IoTitude/instapp_firefox_tests.git  /home/root/test
 echo 'Starting robot tests...'
 testList=$(cat /home/root/test/tests.txt)
 robot $testList
