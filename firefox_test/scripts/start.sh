@@ -13,6 +13,7 @@ echo 'Starting robot tests...'
 testList=$(cat /home/root/test/tests.txt)
 cd /home/root/test
 robot $testList
+echo 'Copying test results...'
 mv /home/root/test/log.html /var/jenkins_home/volume
 mv /home/root/test/output.xml /var/jenkins_home/volume
 mv /home/root/test/report.html /var/jenkins_home/volume
