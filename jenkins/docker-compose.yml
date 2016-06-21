@@ -18,6 +18,6 @@ jenkinsmaster:
 jenkinsnginx:
  build: jenkins-nginx
  ports:
-  - "80:80"
+  - "8088:80"
  links:
   - jenkinsmaster:jenkins-master
