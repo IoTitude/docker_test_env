@@ -15,12 +15,6 @@ jenkinsmaster:
   - "49001:8080"
  links:
   - jenkinsslave:jenkins-slave
-jenkinsnginx:
- image: iotitude/jenkins-nginx
- ports:
-  - "8088:80"
- links:
-  - jenkinsmaster:jenkins-master
 
 # command to run
 # docker-compose up -d
