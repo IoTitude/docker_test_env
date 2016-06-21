@@ -30,10 +30,6 @@ RUN yes 'yes' | apt-get install -y oracle-java8-installer
 # Install Docker from Docker Inc. repositories.
 RUN curl -sSL https://get.docker.com/ | sh
 
-
-# Define additional metadata for our image.
-# VOLUME /var/lib/docker
-
 # Set user jenkins to the image
 RUN useradd -m -d /home/jenkins -s /bin/sh jenkins &&\
     echo "jenkins:jenkins" | chpasswd

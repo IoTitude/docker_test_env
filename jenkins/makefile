@@ -5,7 +5,7 @@ run:
 stop:
 	@docker-compose stop
 clean:	stop
-	@docker-compose rm jenkinsmaster jenkinsnginx
+	@docker-compose rm jenkinsmaster jenkinsnginx jenkinsslave
 clean-data: clean
 	@docker-compose rm -v jenkinsdata
 clean-images:

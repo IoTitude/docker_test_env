@@ -1,5 +1,11 @@
 jenkinsdata:
  build: jenkins-data
+jenkinsslave:
+ build: jenkins-slave
+ volumes_from:
+  - jenkinsdata
+ volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
 jenkinsmaster:
  build: jenkins-master
  volumes_from:
@@ -7,6 +13,8 @@ jenkinsmaster:
  ports:
   - "40000:40000"
   - "49001:8080"
+ links:
+  - jenkinsslave:jenkins-slave
 jenkinsnginx:
  build: jenkins-nginx
  ports:
