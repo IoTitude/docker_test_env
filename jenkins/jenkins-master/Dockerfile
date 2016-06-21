@@ -8,10 +8,7 @@ RUN mkdir /var/cache/jenkins
 RUN chown -R jenkins:jenkins /var/log/jenkins
 RUN chown -R jenkins:jenkins /var/cache/jenkins
 
-# Docker in Docker
 RUN apt-get update && apt-get install -y sudo
-RUN curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-Linux-x86_64 > /usr/local/bin/docker-machine && \
-chmod +x /usr/local/bin/docker-machine
 
 USER jenkins
 
