@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set +e
 date
 # firefox -version
 firefox --version 2>/dev/null
