@@ -13,6 +13,6 @@ echo 'Starting robot tests...'
 testList=$(cat /home/root/test/tests.txt)
 cd /home/root/test
 robot $testList
-mv /home/root/test/log.html /home/root/volume
-mv /home/root/test/output.xml /home/root/volume
-mv /home/root/test/report.html /home/root/volume
+mv /home/root/test/log.html /var/jenkins_home/volume
+mv /home/root/test/output.xml /var/jenkins_home/volume
+mv /home/root/test/report.html /var/jenkins_home/volume
