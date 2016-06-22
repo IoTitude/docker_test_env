@@ -48,7 +48,7 @@ This example project has two items. One for launching Instapp as a webpage, and 
 * Select Restrict where this project can be run and use the label you gave while creating the slave.  
 * Add build step
 * Execute shell
-```
+```shell
 echo "Build starting..."
 docker pull iotitude/ionic_env # Pulls the latest Instapp image if it is not already latest
 export BUILD_ID=dontKillMe # By default processes launched by Jenkins build steps are killed after the build is finished
@@ -59,7 +59,7 @@ Save and create a new item.
 * Build Triggers: Build after other projects are built: name of the first project.
 * Add build step
 * Execute shell
-```
+```shell
 set +e # Set the script to not stop on error
 rm -R /var/jenkins_home/volume # Deletes old test results if they exist
 docker pull iotitude/firefox_test # Pulls the latest version of firefox test image
