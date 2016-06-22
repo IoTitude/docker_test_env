@@ -8,7 +8,13 @@ export DISPLAY=:99
 2>/dev/null 1>&2 Xvfb :99 -shmem -screen 0 1366x768x16 &
 exec "$@"
 echo 'Cloning test repo...'
-git clone https://github.com/IoTitude/instapp_firefox_tests.git  /home/root/test
+mkdir /home/root/test
+cd /home/root/test
+git init
+git remote add -f origin https://github.com/IoTitude/instapp_tests.git
+git config core.sparseCheckout true
+echo "robot-framework/" >> .git/info/sparse-checkout
+git pull origin master
 echo 'Starting robot tests...'
 testList=$(cat /home/root/test/tests.txt)
 cd /home/root/test
