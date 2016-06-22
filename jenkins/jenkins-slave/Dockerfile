@@ -36,6 +36,7 @@ RUN useradd -m -d /home/jenkins -s /bin/sh jenkins &&\
 #-ou 0 -g 0
 RUN sudo adduser jenkins sudo
 RUN usermod -aG docker jenkins
+RUN echo 'jenkins   ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 EXPOSE 22
 
