@@ -16,7 +16,7 @@ git config core.sparseCheckout true
 echo "robot-framework/" >> .git/info/sparse-checkout
 git pull origin master
 echo 'Starting robot tests...'
-testList=$(cat /home/root/test/tests.txt)
+testList=$(awk '$0~//{ if ($2=="chrome") {f=1}; if ($0=="@@@" && f==1) {exit}; if ($2!="chrome" && f==1) {print} }' tests.txt)
 cd /home/root/test
 robot $testList
 echo 'Copying test results...'
