@@ -8,7 +8,7 @@ export DISPLAY=:99
 2>/dev/null 1>&2 Xvfb :99 -shmem -screen 0 1366x768x16 &
 exec "$@"
 echo 'Cloning test repo...'
-mkdir /home/root/test
+mkdir -p /home/root/test
 cd /home/root/test
 git init
 git remote add -f origin https://github.com/IoTitude/instapp_tests.git
