@@ -16,8 +16,8 @@ git config core.sparseCheckout true
 echo "robot-framework/" >> .git/info/sparse-checkout
 git pull origin master
 echo 'Starting robot tests...'
-testList=$(awk '$0~//{ if ($2=="chrome") {f=1}; if ($0=="@@@" && f==1) {exit}; if ($2!="chrome" && f==1) {print} }' tests.txt)
 cd /home/root/test
+testList=$(awk '$0~//{ if ($2=="firefox") {f=1}; if ($0=="@@@" && f==1) {exit}; if ($2!="firefox" && f==1) {print} }' tests.txt)
 robot $testList
 echo 'Copying test results...'
 mv /home/root/test/log.html /var/jenkins_home/volume/log.html
