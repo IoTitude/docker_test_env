@@ -17,7 +17,7 @@ echo "robot-framework/" >> .git/info/sparse-checkout
 git pull origin master
 echo 'Starting robot tests...'
 cd /home/root/test
-testList=$(awk '$0~//{ if ($2=="firefox") {f=1}; if ($0=="@@@" && f==1) {exit}; if ($2!="firefox" && f==1) {print} }' tests.txt)
+testList=$(awk '/firefox/,/@@@/{if ($0!="@@@" && $2!="firefox"){print}}' tests.txt)
 robot $testList
 echo 'Copying test results...'
 mv /home/root/test/log.html /var/jenkins_home/volume/log.html
