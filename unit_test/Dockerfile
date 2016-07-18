@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
 
   nodejs
 
-RUN npm install -g cordova ionic
+RUN npm install -g cordova
+RUN npm install -g ionic
 
 RUN mkdir -p /usr/src
 

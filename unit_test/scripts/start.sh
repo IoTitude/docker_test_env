@@ -14,6 +14,7 @@ npm install karma karma-jasmine karma-phantomjs-launcher --save-dev
 npm install -g karma-cli
 npm install -g bower
 npm install gulp -g
+npm install karma-junit-reporter --save-dev
 npm install 
 
 # Add resolution in bower.json to automate angular installation
