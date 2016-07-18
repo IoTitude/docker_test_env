@@ -11,12 +11,12 @@ echo 'Cloning test repo...'
 mkdir -p /home/root/test
 cd /home/root/test
 git init
-git remote add -f origin https://github.com/IoTitude/instapp_tests.git
+git remote add -f origin https://github.com/IoTitude/portal_tests.git
 git config core.sparseCheckout true
 echo "robot-framework/" >> .git/info/sparse-checkout
 git pull origin master
 echo 'Starting robot tests...'
-cd /home/root/test
+cd /home/root/test/robot-framework
 testList=$(awk '/firefox/,/@@@/{if ($0!="@@@" && $2!="firefox"){print}}' tests.txt)
 robot $testList
 echo 'Copying test results...'
