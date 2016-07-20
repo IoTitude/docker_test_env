@@ -20,6 +20,7 @@ cd /home/root/test/robot-framework
 testList=$(awk '/firefox/,/@@@/{if ($0!="@@@" && $2!="firefox"){print}}' tests.txt)
 robot $testList
 echo 'Copying test results...'
-mv /home/root/test/log.html /var/jenkins_home/volume/log.html
-mv /home/root/test/output.xml /var/jenkins_home/volume/output.xml
-mv /home/root/test/report.html /var/jenkins_home/volume/report.html
+mv /home/root/test/robot-framework/log.html /var/jenkins_home/volume/log.html
+mv /home/root/test/robot-framework/output.xml /var/jenkins_home/volume/output.xml
+mv /home/root/test/robot-framework/report.html /var/jenkins_home/volume/report.html
+
