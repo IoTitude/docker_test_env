@@ -5,9 +5,9 @@ cd /usr/src/Instapp
 
 # If you want to test the latest tagged version
 
-	# git fetch --tags
-	# latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
-	# git checkout $latestTag
+git fetch --tags
+latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+git checkout $latestTag
 
 # Install Karma + Jasmine
 npm install karma karma-jasmine karma-phantomjs-launcher --save-dev
