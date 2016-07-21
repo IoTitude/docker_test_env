@@ -12,6 +12,7 @@ apt-get install -y \
 python-pip \
 git \
 wget \
+curl \
 ca-certificates \
 xfonts-100dpi \
 xfonts-75dpi \
