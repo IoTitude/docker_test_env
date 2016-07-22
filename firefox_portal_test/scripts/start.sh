@@ -29,6 +29,17 @@ length=${#success}
 echo $success
 sleep 5
 done
+# test Baasbox loop
+success=""
+length=${#success}
+while test $length -eq 0
+do
+echo "Waiting for Baasbox..."
+success=$(curl -s --head http://localhost:9000/ | head -n 1 | grep "HTTP/1.[01] [23]..")
+length=${#success}
+echo $success
+sleep 5
+done
 robot $testList
 echo 'Copying test results...'
 mv /home/root/test/robot-framework/log.html /var/jenkins_home/volume/log.html
