@@ -34,8 +34,8 @@ success=""
 length=${#success}
 while test $length -eq 0
 do
-echo "Waiting for Baasbox..."
-success=$(curl -s --head http://localhost:9000/ | head -n 1 | grep "HTTP/1.[01] [23]..")
+echo "Waiting for Portal..."
+success=$(curl -s localhost:9000 | grep -o "\w*BaasBox v.0.9.5\w*")
 length=${#success}
 echo $success
 sleep 5
