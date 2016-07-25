@@ -34,7 +34,7 @@ success=""
 length=${#success}
 while test $length -eq 0
 do
-echo "Waiting for Portal..."
+echo "Waiting for Baasbox..."
 success=$(curl -s localhost:9000 | grep -o "\w*BaasBox v.0.9.5\w*")
 length=${#success}
 echo $success
