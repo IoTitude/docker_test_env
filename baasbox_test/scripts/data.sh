@@ -3,7 +3,7 @@ BBsession=""
 echo $BBsession
 length=${#BBsession}
 echo $length
-url="baasbox.io"
+url="localhost:9000"
 echo $url
 
 # Login loop
