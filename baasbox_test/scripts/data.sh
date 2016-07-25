@@ -111,3 +111,155 @@ curl -X POST http://$url/document/Version \
      -d '{   "number": "0.4.6"}' \
      -H Content-type:application/json \
      -H X-BB-SESSION:$BBsession
+
+##### Plugins #####
+
+# Set fileName
+fileName="library.shared.js"
+echo $fileName
+
+# Strip .js part of fileName to set as plugin name
+codeName=${fileName/.js/}
+
+# Encode to base64
+echo "Encoding $codeName..."
+base64 $fileName > "$fileName.tmp"
+# Concatenate to single line
+codeContent=$(while read line; do echo -n "$line "; done < "$fileName.tmp")
+# Remove temp file
+rm "$fileName.tmp"
+
+# Post the data
+echo "Posting plugin $codeName..."
+curl \
+-X POST \
+-H "X-BAASBOX-APPCODE:$appcode" \
+-H "X-BB-SESSION:$BBsession" \
+-H "Content-Type:application/json" \
+-d '{ "lang": "javascript", "name": "'"$codeName"'", "encoded": "BASE64", "code": "'"$codeContent"'", "active": "true"}' \
+"http://$url/admin/plugin"
+
+# Set fileName
+fileName="instapp.enabled.js"
+echo $fileName
+
+# Strip .js part of fileName to set as plugin name
+codeName=${fileName/.js/}
+
+# Encode to base64
+echo "Encoding $codeName..."
+base64 $fileName > "$fileName.tmp"
+# Concatenate to single line
+codeContent=$(while read line; do echo -n "$line "; done < "$fileName.tmp")
+# Remove temp file
+rm "$fileName.tmp"
+
+# Post the data
+echo "Posting plugin $codeName..."
+curl \
+-X POST \
+-H "X-BAASBOX-APPCODE:$appcode" \
+-H "X-BB-SESSION:$BBsession" \
+-H "Content-Type:application/json" \
+-d '{ "lang": "javascript", "name": "'"$codeName"'", "encoded": "BASE64", "code": "'"$codeContent"'", "active": "true"}' \
+"http://$url/admin/plugin"
+
+# Set fileName
+fileName="instapp.toggle.js"
+echo $fileName
+
+# Strip .js part of fileName to set as plugin name
+codeName=${fileName/.js/}
+
+# Encode to base64
+echo "Encoding $codeName..."
+base64 $fileName > "$fileName.tmp"
+# Concatenate to single line
+codeContent=$(while read line; do echo -n "$line "; done < "$fileName.tmp")
+# Remove temp file
+rm "$fileName.tmp"
+
+# Post the data
+echo "Posting plugin $codeName..."
+curl \
+-X POST \
+-H "X-BAASBOX-APPCODE:$appcode" \
+-H "X-BB-SESSION:$BBsession" \
+-H "Content-Type:application/json" \
+-d '{ "lang": "javascript", "name": "'"$codeName"'", "encoded": "BASE64", "code": "'"$codeContent"'", "active": "true"}' \
+"http://$url/admin/plugin"
+
+# Set fileName
+fileName="portal.restartKamu.js"
+echo $fileName
+
+# Strip .js part of fileName to set as plugin name
+codeName=${fileName/.js/}
+
+# Encode to base64
+echo "Encoding $codeName..."
+base64 $fileName > "$fileName.tmp"
+# Concatenate to single line
+codeContent=$(while read line; do echo -n "$line "; done < "$fileName.tmp")
+# Remove temp file
+rm "$fileName.tmp"
+
+# Post the data
+echo "Posting plugin $codeName..."
+curl \
+-X POST \
+-H "X-BAASBOX-APPCODE:$appcode" \
+-H "X-BB-SESSION:$BBsession" \
+-H "Content-Type:application/json" \
+-d '{ "lang": "javascript", "name": "'"$codeName"'", "encoded": "BASE64", "code": "'"$codeContent"'", "active": "true"}' \
+"http://$url/admin/plugin"
+
+# Set fileName
+fileName="portal.updateProfile.js"
+echo $fileName
+
+# Strip .js part of fileName to set as plugin name
+codeName=${fileName/.js/}
+
+# Encode to base64
+echo "Encoding $codeName..."
+base64 $fileName > "$fileName.tmp"
+# Concatenate to single line
+codeContent=$(while read line; do echo -n "$line "; done < "$fileName.tmp")
+# Remove temp file
+rm "$fileName.tmp"
+
+# Post the data
+echo "Posting plugin $codeName..."
+curl \
+-X POST \
+-H "X-BAASBOX-APPCODE:$appcode" \
+-H "X-BB-SESSION:$BBsession" \
+-H "Content-Type:application/json" \
+-d '{ "lang": "javascript", "name": "'"$codeName"'", "encoded": "BASE64", "code": "'"$codeContent"'", "active": "true"}' \
+"http://$url/admin/plugin"
+
+# Set fileName
+fileName="portal.updateSoftware.js"
+echo $fileName
+
+# Strip .js part of fileName to set as plugin name
+codeName=${fileName/.js/}
+
+# Encode to base64
+echo "Encoding $codeName..."
+base64 $fileName > "$fileName.tmp"
+# Concatenate to single line
+codeContent=$(while read line; do echo -n "$line "; done < "$fileName.tmp")
+# Remove temp file
+rm "$fileName.tmp"
+
+# Post the data
+echo "Posting plugin $codeName..."
+curl \
+-X POST \
+-H "X-BAASBOX-APPCODE:$appcode" \
+-H "X-BB-SESSION:$BBsession" \
+-H "Content-Type:application/json" \
+-d '{ "lang": "javascript", "name": "'"$codeName"'", "encoded": "BASE64", "code": "'"$codeContent"'", "active": "true"}' \
+"http://$url/admin/plugin"
