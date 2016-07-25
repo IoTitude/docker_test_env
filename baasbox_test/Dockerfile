@@ -13,7 +13,6 @@ RUN rm baasbox*.zip
 RUN mv baasbox-*/ baasbox/
 WORKDIR baasbox/
 ADD ./scripts/ /usr/src/baasbox/scripts
-ADD ./files/ /usr/src/baasbox/files
 RUN chmod +x ./start
 RUN chmod +x ./scripts/start.sh
 RUN chmod +x ./scripts/data.sh
