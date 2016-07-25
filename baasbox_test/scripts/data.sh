@@ -3,16 +3,18 @@ BBsession=""
 echo $BBsession
 length=${#BBsession}
 echo $length
-url="localhost:9000"
+url="baasbox.io"
 echo $url
 
 # Login loop
+echo "Loggin in..."
 while test $length -eq 0
 do
 curl http://$url/login     -d "username=admin"    -d "password=admin"    -d "appcode=1234567890"  > output.txt
 sed -i -n -e 's/.*X-BB-SESSION":"//p' output.txt
-sed -it -n -e 's/ *".*//p' output.txt
+sed -i -n -e 's/ *".*//p' output.txt
 BBsession=$(cat output.txt)
+rm output.txt
 length=${#BBsession}
 echo $BBsession
 sleep 2
