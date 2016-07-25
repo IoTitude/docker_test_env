@@ -119,7 +119,7 @@ fileName="library.shared.js"
 echo $fileName
 
 # Strip .js part of fileName to set as plugin name
-codeName=${fileName/.js/}
+codeName=${fileName%.js}
 
 # Encode to base64
 echo "Encoding $codeName..."
@@ -144,7 +144,7 @@ fileName="instapp.enabled.js"
 echo $fileName
 
 # Strip .js part of fileName to set as plugin name
-codeName=${fileName/.js/}
+codeName=${fileName%.js}
 
 # Encode to base64
 echo "Encoding $codeName..."
@@ -169,7 +169,7 @@ fileName="instapp.toggle.js"
 echo $fileName
 
 # Strip .js part of fileName to set as plugin name
-codeName=${fileName/.js/}
+codeName=${fileName%.js}
 
 # Encode to base64
 echo "Encoding $codeName..."
@@ -194,7 +194,7 @@ fileName="portal.restartKamu.js"
 echo $fileName
 
 # Strip .js part of fileName to set as plugin name
-codeName=${fileName/.js/}
+codeName=${fileName%.js}
 
 # Encode to base64
 echo "Encoding $codeName..."
@@ -219,7 +219,7 @@ fileName="portal.updateProfile.js"
 echo $fileName
 
 # Strip .js part of fileName to set as plugin name
-codeName=${fileName/.js/}
+codeName=${fileName%.js}
 
 # Encode to base64
 echo "Encoding $codeName..."
@@ -244,7 +244,7 @@ fileName="portal.updateSoftware.js"
 echo $fileName
 
 # Strip .js part of fileName to set as plugin name
-codeName=${fileName/.js/}
+codeName=${fileName%.js}
 
 # Encode to base64
 echo "Encoding $codeName..."
