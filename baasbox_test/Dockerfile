@@ -3,6 +3,9 @@
 FROM java:8
 MAINTAINER Ruben Laube-Pohto
 
+RUN apt-get update && \
+apt-get install -y bc
+
 RUN mkdir -p /usr/src/
 WORKDIR /usr/src/
 # Download BaasBox. Could not find means of downloading a specific version.
