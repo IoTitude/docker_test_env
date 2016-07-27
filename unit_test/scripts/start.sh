@@ -21,9 +21,9 @@ npm install karma-junit-reporter --save-dev
 npm install 
 
 # Add resolution in bower.json to automate angular installation
-sed -i '/ionic/c\  "ionic": "driftyco/ionic-bower#1.3.1", "angular": "1.5.7",    "angular-mocks": "^1.5.8"  },  "resolutions": {  "angular": "1.5.8", "angular-mocks": "1.5.8"   ' /usr/src/Instapp/bower.json
+sed -i '/ionic/c\  "ionic": "driftyco/ionic-bower#1.3.1", "angular-mocks": "^1.5.8" },  "resolutions": {  "angular": "1.5.8", "angular-mocks": "^1.5.8" ' /usr/src/Instapp/bower.json
 
-bower install angular-mocks --allow-root --save-dev
+bower install angular-mocks --allow-root --save-dev --force
 
 # Clone tests directory
 mkdir -p /usr/src/tmp
