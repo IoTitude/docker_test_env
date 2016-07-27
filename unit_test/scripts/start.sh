@@ -9,6 +9,9 @@ git fetch --tags
 latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
 git checkout $latestTag
 
+source /usr/src/Instapp/setup.sh
+gulp minjs
+
 # Install Karma + Jasmine
 npm install karma karma-jasmine karma-phantomjs-launcher --save-dev
 npm install -g karma-cli
