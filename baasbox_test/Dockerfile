@@ -17,6 +17,7 @@ RUN mv baasbox-*/ baasbox/
 WORKDIR baasbox/
 ADD ./scripts/ /usr/src/baasbox/scripts
 RUN chmod +x ./start
+RUN chmod +x ./scripts/generate_mock_data.sh
 RUN chmod +x ./scripts/start.sh
 RUN chmod +x ./scripts/data.sh
 
