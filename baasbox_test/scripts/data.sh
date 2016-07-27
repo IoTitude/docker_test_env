@@ -263,3 +263,6 @@ curl \
 -H "Content-Type:application/json" \
 -d '{ "lang": "javascript", "name": "'"$codeName"'", "encoded": "BASE64", "code": "'"$codeContent"'", "active": "true"}' \
 "http://$url/admin/plugin"
+
+# Add some more Kamus
+source /usr/src/baasbox/scripts/generate_mock_data.sh
